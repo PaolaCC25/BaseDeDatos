@@ -1,0 +1,27 @@
+<h1> Agregar informacion </h1>
+
+<% if @todo.errors.any? %>
+<h2> No se pudo guardar el registro </h2>
+<ul>
+<% @todo.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= form_for @todo do |f| %>
+<p>
+	<%= f.label :nombre %> <br>
+	<%= f.text_field :nombre %>
+</p>
+    
+<p>
+    <%= f.label :descripcion %> <br>
+	<%= f.text_area :descripcion %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+  
+  <% end %> 
